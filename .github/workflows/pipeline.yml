@@ -6,6 +6,7 @@ on:
 jobs:
   build:
     name: Build App
+      
     runs-on: ubuntu-latest
     steps:
 
@@ -15,17 +16,15 @@ jobs:
         go-version: ^1.21
 
     - name: Check out code into the Go module directory
-      user: actions/checkout@v2
-      with:
-        go-version: ^1.21
-
+      uses: actions/checkout@v2
+        
     - name: Build
       run: make build
 
     - name: Copy files
       run: |
-            mkdir  artifacts
-            cp api artifacts/.
+          mkdir  artifacts
+          cp api artifacts/.
 
     - name: Archive
       uses: actions/upload-artifact@v2
