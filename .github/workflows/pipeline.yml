@@ -23,7 +23,7 @@ jobs:
     
     - name: Run Test 
       run: go test ./...
-jobs:
+        
   build:
     name: Build App
     runs-on: ubuntu-latest
