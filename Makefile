@@ -19,3 +19,6 @@ build:
 
 run: build
 	@./api
+
+test:
+	@go test ./...
